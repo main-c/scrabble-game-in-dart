@@ -1,0 +1,75 @@
+format 224
+
+classcanvas 128002 class_ref 128002 // Joueur
+  classdiagramsettings member_max_width 0 end
+  xyz 160.8 49.2 2000
+end
+classcanvas 128130 class_ref 128130 // Chevalet
+  classdiagramsettings member_max_width 0 end
+  xyz 25.4 303 2000
+end
+classcanvas 128258 class_ref 128258 // Tableau
+  classdiagramsettings member_max_width 0 end
+  xyz 642.2 84.1 2000
+end
+classcanvas 128386 class_ref 128386 // Case
+  classdiagramsettings member_max_width 0 end
+  xyz 661.7 473.1 2000
+end
+classcanvas 128514 class_ref 128514 // Jeton
+  classdiagramsettings member_max_width 0 end
+  xyz 353.8 536 2000
+end
+classcanvas 128642 class_ref 128642 // Sac
+  classdiagramsettings member_max_width 0 end
+  xyz 64.7 577.5 2000
+end
+note 129410 "un jeton peut etre soit dans un sac, soit dans un chevalet soit dans une case. ce qui explique les relations 0..1"
+  xyzwh 367.2 672.6 2000 195 61
+classcanvas 129538 class_ref 128770 // Mot
+  classdiagramsettings member_max_width 0 end
+  xyz 453.5 261.7 2000
+end
+note 130306 "sdf"
+  xyzwh 999.8 45.6 2000 35 35
+relationcanvas 128770 relation_ref 128002 // possede
+  from ref 128002 z 2001 label "possede" italic max_width 255 xyz 125.5 230 3000 to ref 128130
+  no_role_a no_role_b
+  multiplicity_a_pos 106 278 3000 multiplicity_b_pos 171 209 3000
+end
+relationcanvas 128898 relation_ref 128130 // contient
+  from ref 128130 z 2001 label "contient" italic max_width 255 xyz 218.5 451.5 3000 to ref 128514
+  no_role_a no_role_b
+  multiplicity_a_pos 336 574 3000 multiplicity_b_pos 149 405 3000
+end
+relationcanvas 129026 relation_ref 128258 // contient
+  from ref 128514 z 2001 label "contient" italic max_width 255 xyz 238.5 574 3000 to ref 128642
+  no_role_a no_role_b
+  multiplicity_a_pos 193 618 3000 multiplicity_b_pos 301 592 3000
+end
+relationcanvas 129154 relation_ref 128386 // contient (matrice)
+  from ref 128258 z 2001 label "contient (matrice)" italic max_width 255 xyz 642.5 289 3000 to ref 128386
+  no_role_a no_role_b
+  multiplicity_a_pos 677 446 3000 multiplicity_b_pos 681 156 3000
+end
+relationcanvas 129282 relation_ref 128514 // est depose sur
+  from ref 128386 z 2001 label "est depose sur" italic max_width 255 xyz 483.5 522 3000 to ref 128514
+  no_role_a no_role_b
+  multiplicity_a_pos 417 581 3000 multiplicity_b_pos 627 524 3000
+end
+relationcanvas 129666 relation_ref 128642 // depose (liste)
+  from ref 128002 z 2001 label "depose (liste)" italic max_width 255 xyz 388.5 230 3000 to ref 129538
+  no_role_a no_role_b
+  multiplicity_a_pos 442 278 3000 multiplicity_b_pos 358 205 3000
+end
+relationcanvas 129794 relation_ref 128770 // est forme de (liste)
+  from ref 129538 z 2001 label "est forme de (liste)" italic max_width 255 xyz 543 378 3000 to ref 128386
+  no_role_a no_role_b
+  multiplicity_a_pos 631 447 3000 multiplicity_b_pos 509 334 3000
+end
+relationcanvas 129922 relation_ref 128898 // contient (liste)
+  from ref 128258 z 2001 label "contient (liste)" italic max_width 255 xyz 548 182.5 3000 to ref 129538
+  no_role_a no_role_b
+  multiplicity_a_pos 545 264 3000 multiplicity_b_pos 645 148 3000
+end
+end

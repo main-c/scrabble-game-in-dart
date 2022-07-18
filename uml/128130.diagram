@@ -1,0 +1,48 @@
+format 224
+
+classinstancecanvas 128130 classinstance_ref 128002 // joueur
+  xyz 8 4 2005 life_line_z 2000
+end
+classinstancecanvas 128258 classinstance_ref 128130 // chevalet
+  xyz 261 5 2005 life_line_z 2000
+end
+classinstancecanvas 128386 classinstance_ref 128258 // tableau
+  xyz 538 4 2005 life_line_z 2000
+end
+durationcanvas 128514 classinstance_ref 128130 // joueur:Joueur
+  xyzwh 56 65 2010 11 139
+end
+durationcanvas 128642 classinstance_ref 128258 // chevalet:Chevalet
+  xyzwh 323 84 2010 11 120
+end
+durationcanvas 129026 classinstance_ref 128130 // joueur:Joueur
+  xyzwh 56 278 2010 11 81
+end
+durationcanvas 129154 classinstance_ref 128386 // tableau:Tableau
+  xyzwh 594 278 2010 11 73
+end
+msg 128770 synchronous
+  from durationcanvas_ref 128514
+  to durationcanvas_ref 128642
+  yz 85 2015 msg operation_ref 128386 // "prendre_jetons(in lettres : string [*])"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 144 63
+msg 128898 return
+  from durationcanvas_ref 128642
+  to durationcanvas_ref 128514
+  yz 191 2015 explicitmsg "List[Jeton] liste jetons"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 119 169
+msg 129282 synchronous
+  from durationcanvas_ref 129026
+  to durationcanvas_ref 129154
+  yz 280 2015 msg operation_ref 128898 // "recevoir_mot(in jetons : Jeton [*], in direction : string [1], in pos_x : int, in pos_y : int) : Mot"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 279 258
+msg 129410 return
+  from durationcanvas_ref 129154
+  to durationcanvas_ref 129026
+  yz 329 2015 explicitmsg "Mot cree"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 298 307
+end

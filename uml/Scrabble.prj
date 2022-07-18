@@ -1,0 +1,445 @@
+format 224
+"Scrabble"
+  revision 1
+  modified_by 2 "jefcolbi"
+
+
+  
+  // class settings
+  default_attribute_visibility private default_relation_visibility private default_operation_visibility public
+  
+  classdiagramsettings draw_all_relations yes hide_attributes no hide_operations no hide_getset_operations no hide_ports no show_members_full_definition no show_members_visibility no show_members_stereotype no show_members_context no show_members_multiplicity no show_members_initialization no show_attribute_modifiers no member_max_width 127 show_parameter_dir yes show_parameter_name yes package_name_in_tab no class_drawing_mode natural drawing_language uml show_context_mode no auto_label_position yes show_relation_modifiers no show_relation_visibility no show_infonote no shadow yes gradient none show_stereotype_properties no end
+  
+  classcompositediagramsettings auto_label_position yes draw_all_relations yes shadow yes gradient none end
+  
+  usecasediagramsettings package_name_in_tab no show_context_mode no auto_label_position yes draw_all_relations yes class_drawing_mode actor shadow yes gradient none show_stereotype_properties no end
+  
+  sequencediagramsettings show_full_operations_definition no show_class_of_operation no write_horizontally yes instances_drawing_mode natural drawing_language uml draw_all_relations yes shadow yes gradient none show_stereotype_properties no show_class_context_mode no show_msg_context_mode no end
+  
+  collaborationdiagramsettings show_full_operations_definition no show_class_of_operation no show_hierarchical_rank no write_horizontally yes instances_drawing_mode natural drawing_language uml package_name_in_tab no show_class_pack_context_mode no show_msg_context_mode no draw_all_relations yes shadow yes gradient none show_stereotype_properties no end
+  
+  objectdiagramsettings write_horizontally yes package_name_in_tab no show_class_pack_context_mode no auto_label_position yes draw_all_relations yes shadow yes gradient none show_stereotype_properties no end
+  
+  objectcompositediagramsettings auto_label_position yes draw_all_relations yes shadow yes gradient none end
+  
+  componentdiagramsettings package_name_in_tab no show_context_mode no auto_label_position yes draw_all_relations yes shadow yes gradient none
+   draw_component_as_icon no show_component_req_prov no show_component_rea no show_stereotype_properties no end
+  
+  deploymentdiagramsettings package_name_in_tab no show_context_mode no write_horizontally yes auto_label_position yes draw_all_relations yes shadow yes gradient none
+   draw_component_as_icon no show_component_req_prov no show_component_rea no show_stereotype_properties no end
+  
+  statediagramsettings package_name_in_tab no show_context_mode no auto_label_position yes write_label_horizontally yes show_trans_definition no draw_all_relations yes shadow yes gradient none
+   show_activities yes region_horizontally yes drawing_language uml show_stereotype_properties no end
+  
+  activitydiagramsettings package_name_in_tab no show_context_mode no show_opaque_action_definition no auto_label_position yes write_label_horizontally no draw_all_relations yes shadow yes gradient none
+   show_infonote yes drawing_language uml show_stereotype_properties no end
+  
+  class_color yellow duration_color transparent continuation_color gray note_color blue fragment_color transparent subject_color transparent usecase_color yellow package_color transparent component_color green artifact_color green deploymentnode_color gray state_color yellow stateaction_color transparent activity_color transparent activityregion_color transparent activitypartition_color transparent activityaction_color transparent parameterpin_color white generalization_color black 
+  dpi 96
+  font_size 9
+  diagram_format A4
+
+  image_root_dir ""
+
+
+  mark_for_import
+  
+  classview 128002 "default"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 128002 "cd"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 128002 "Joueur"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128002 // (possede)
+	relation 128002 ---- name "possede"
+	  a role_name "" multiplicity "1" private
+	    classrelation_ref 128002 // (possede)
+	  b role_name "" multiplicity "1" private
+	    classrelation_ref 128130 // (possede)
+      end
+
+      operation 128002 "prendre_jeton_dans_sac"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      operation 128130 "poser_mot_sur_tableau"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      attribute 128258 "prenom"
+	private explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      classrelation 129282 // (depose (liste))
+	relation 128642 ---- name "depose (liste)"
+	  a role_name "" multiplicity "*" private
+	    classrelation_ref 129282 // (depose (liste))
+	  b role_name "" multiplicity "1" private
+	    classrelation_ref 129410 // (depose (liste))
+      end
+
+      operation 128514 "total_points"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      operation 129154 "vider_chevalet"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	
+	
+	
+      end
+    end
+
+    class 128130 "Chevalet"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128130 // (possede)
+	relation_ref 128002 // possede
+      end
+
+      classrelation 128258 // (contient)
+	relation 128130 ---- name "contient"
+	  a role_name "" multiplicity "*" private
+	    classrelation_ref 128258 // (contient)
+	  b role_name "" multiplicity "0..1" private
+	    classrelation_ref 128386 // (contient)
+      end
+
+      operation 128258 "se_vider"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      operation 128386 "prendre_jetons"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "lettres" explicit_type "string"
+	multiplicity "*"
+	
+	
+	
+	
+	
+	comment "fonction permettant de retourner les jetons correspondants aux lettres passées en parametres"
+      end
+    end
+
+    class 128258 "Tableau"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128770 // (contient (matrice))
+	relation 128386 ---- name "contient (matrice)"
+	  a role_name "" multiplicity "225" private
+	    classrelation_ref 128770 // (contient (matrice))
+	  b role_name "" multiplicity "1" private
+	    classrelation_ref 128898 // (contient (matrice))
+      end
+
+      classrelation 129794 // (contient (liste))
+	relation 128898 ---- name "contient (liste)"
+	  a role_name "" multiplicity "*" private
+	    classrelation_ref 129794 // (contient (liste))
+	  b role_name "" multiplicity "1" private
+	    classrelation_ref 129922 // (contient (liste))
+      end
+
+      operation 128898 "recevoir_mot"
+	public return_type class_ref 128770 // Mot
+	nparams 4
+	  param in name "jetons" type class_ref 128514 // Jeton
+	multiplicity "*"
+	  param in name "direction" explicit_type "string"
+	multiplicity "1"
+	  param in name "pos_x" explicit_type "int"
+	  param in name "pos_y" explicit_type "int"
+	
+	
+	
+	
+	
+	comment "fonction qui recoit une liste de jeton, la direction, la position d'origine x,y. La fonction cree ensuite le mot et le retourne. apres avoir verifie que tout est valide: la position initiale, toutes les positions du mot, l'orthographe du mot etc"
+      end
+    end
+
+    class 128386 "Case"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128898 // (contient (matrice))
+	relation_ref 128386 // contient (matrice)
+      end
+
+      classrelation 129026 // (est depose sur)
+	relation 128514 ---- name "est depose sur"
+	  a role_name "" multiplicity "0..1" private
+	    classrelation_ref 129026 // (est depose sur)
+	  b role_name "" multiplicity "0..1" private
+	    classrelation_ref 129154 // (est depose sur)
+      end
+
+      classrelation 129666 // (est forme de (liste))
+	relation_ref 128770 // est forme de (liste)
+      end
+
+      operation 128770 "total_points"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	
+	
+	
+      end
+    end
+
+    class 128514 "Jeton"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128386 // (contient)
+	relation_ref 128130 // contient
+      end
+
+      classrelation 128514 // (contient)
+	relation 128258 ---- name "contient"
+	  a role_name "" multiplicity "0..1" private
+	    classrelation_ref 128514 // (contient)
+	  b role_name "" multiplicity "0..102" private
+	    classrelation_ref 128642 // (contient)
+      end
+
+      classrelation 129154 // (est depose sur)
+	relation_ref 128514 // est depose sur
+      end
+
+      attribute 128002 "lettre"
+	private explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 128130 "valeur"
+	private explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 128642 "Sac"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128642 // (contient)
+	relation_ref 128258 // contient
+      end
+
+      operation 129026 "prendre_jeton"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	
+	
+	
+      end
+
+      operation 129282 "remplir"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	
+	
+	
+      end
+    end
+
+    class 128770 "Mot"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 129410 // (depose (liste))
+	relation_ref 128642 // depose (liste)
+      end
+
+      classrelation 129538 // (est forme de (liste))
+	relation 128770 ---- name "est forme de (liste)"
+	  a role_name "" multiplicity "0..15" private
+	    classrelation_ref 129538 // (est forme de (liste))
+	  b role_name "" multiplicity "0..1" private
+	    classrelation_ref 129666 // (est forme de (liste))
+      end
+
+      classrelation 129922 // (contient (liste))
+	relation_ref 128898 // contient (liste)
+      end
+
+      operation 128642 "total_points"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	
+	
+	
+      end
+    end
+
+    sequencediagram 128130 "deposer_mot"
+      sequencediagramsettings end
+      overlapping_bars size A4
+    end
+
+    classinstance 128002 "joueur"
+      type class_ref 128002 // Joueur
+      attributes
+        end
+      relations
+        end
+    end
+
+    classinstance 128130 "chevalet"
+      type class_ref 128130 // Chevalet
+      attributes
+        end
+      relations
+        end
+    end
+
+    classinstance 128258 "tableau"
+      type class_ref 128258 // Tableau
+      attributes
+        end
+      relations
+        end
+    end
+
+    sequencediagram 128258 "prendre_jeton"
+      sequencediagramsettings end
+      overlapping_bars size A4
+    end
+
+    classinstance 128386 "sac"
+      type class_ref 128642 // Sac
+      attributes
+        end
+      relations
+        end
+    end
+
+    sequencediagram 128386 "vider_chevalet"
+      sequencediagramsettings end
+      overlapping_bars size A4
+    end
+  end
+end
