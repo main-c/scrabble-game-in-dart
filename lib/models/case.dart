@@ -2,18 +2,17 @@ import 'package:scrabble/models/chip.dart';
 import 'package:scrabble/models/table.dart';
 import 'package:scrabble/models/word.dart';
 
-class Box {
-  Box(this.color, this.value, this.word, this.chip);
+class Case {
+  Case({required this.asisX, required this.ordY, required this.color});
+  int asisX;
+  int ordY;
   String color;
-  int value;
-  Word word;
-  Chip chip;
-  Table tabel = Table();
+  Mot? mot;
+  Jeton? jeton;
+  bool estLibre = true;
 
   @override
   String toString() {
-    return '$color-$value';
+    return '$color';
   }
-
-  
 }
